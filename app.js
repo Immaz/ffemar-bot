@@ -48,7 +48,9 @@ async function getAmount(){
 
 async function takeProfits(symbol, tpPrice, total, percentage){
 
-  const qty = total*(percentage/100);
+  const qty = Number(total)*(Number(percentage)/100);
+
+    console.log("qty:" qty);
 
   client
   .setTradingStop({
