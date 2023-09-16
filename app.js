@@ -50,7 +50,7 @@ async function takeProfits(symbol, tpPrice, total, percentage){
 
   const qty = Number(total)*(Number(percentage)/100);
 
-    console.log("qty:" qty);
+    console.log("qty:", qty);
 
   client
   .setTradingStop({
