@@ -4,23 +4,11 @@ const app = express()
 app.use(bodyParser.text());
 
 
-// ---BINANCE
-// const { Spot } = require('@binance/connector')
-
-// const apiKey = 'JnXRg42XLD43nEpOOixX5202ynziwSIlaDu6Ymt5eE64sp5IpOOImIA85RyV4PMP'
-// const apiSecret = '8uBtP4uGjMWgiLkQ5QZUbw6Hqq5tIaNcLeZjmCE8LmLMA8zmEsVvbqNHJlITeV6t'
-// const client = new Spot(apiKey, apiSecret)
-// app.post("/webhook", async function(req, res){
-  
-//   account = client.account().then(response => console.log(response.data));
-//     res.send(account);
-
-// });.
 const { RestClientV5 } = require('bybit-api');
 
 const client = new RestClientV5({
-    key: 'uPUVLSYxOY1FLPNhjU',
-    secret: 'mw1QxiwdmELJea3v2DnUVsebtNJjOGgwMNVl',
+    key: process.env.API,
+    secret: process.env.SECRET,
 });
 
 app.get('/', function (req, res) {
