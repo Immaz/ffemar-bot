@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-app.use(bodyParser.text());
+app.use(bodyParser.json());
 
 
 const { RestClientV5 } = require('bybit-api');
@@ -102,7 +102,7 @@ async function createOrder(data){
   }
 app.post("/webhook/createOrder", async function (req, res){
 
-  var data = JSON.parse(req.body);
+  var data = req.body;
   createOrder(data);
 
 
